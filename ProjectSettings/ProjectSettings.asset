@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 00bc4b4fc5e144163a61edba3e718b30
+  productGUID: 305a3a685d85b4646873115fa3a65449
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Julieninc
-  productName: plantar
+  companyName: GreeneryInc
+  productName: Greenery
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,9 +139,9 @@ PlayerSettings:
   bundleVersion: 1.0
   preloadedAssets:
   - {fileID: 11400000, guid: 1eb95d77acb39444e8cf44313496a874, type: 2}
-  - {fileID: -5815894713498470209, guid: 58f40b12bbc864f3c96c6505a9a1e1e3, type: 2}
-  - {fileID: 11400000, guid: e49044e77b4bd4b81af119ff8b92c1dd, type: 2}
-  - {fileID: 2069475020644735648, guid: 6bb381a8ba31f114d9724357633b4625, type: 2}
+  - {fileID: 512695055970253319, guid: 58f40b12bbc864f3c96c6505a9a1e1e3, type: 2}
+  - {fileID: 11400000, guid: c8bf61912205149378c21d4edd943a78, type: 2}
+  - {fileID: 4956501276926351205, guid: 6bb381a8ba31f114d9724357633b4625, type: 2}
   - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
   - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type: 3}
   metroInputSource: 0
@@ -699,14 +699,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: plantar
+  metroPackageName: Greenery
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: plantar
+  metroApplicationDescription: Greenery
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -775,10 +775,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e91309b5-2c20-47a7-96c0-a50df1c32fd7
+  cloudProjectId: 9e11a546-182c-4164-9cc0-2be44b2e33a1
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: plantar
+  projectName: Greenery
   organizationId: unity_0an_ntqnovfduq
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

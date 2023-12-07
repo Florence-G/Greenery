@@ -29,8 +29,12 @@ public class LSystemScript : MonoBehaviour
     {
         transformStack = new Stack<TransformInfo>();
         rules = new Dictionary<char, string> {
-            {'F', "F+[+F]-[-F+D]"},
-            {'L', "F+[+F-DL]-[-F-L]"},
+            // {'F', "F+[+F]-[-F+D]"},
+            // {'L', "F+[+F-DL]-[-F-L]"},
+            // {'F', "F+[+F]-[-F]"},
+            // {'L', "F+[+F-DL]-[-F-L]"},
+            {'F', "F+[+F]-[-F]"},
+{'L', "F+[+F-DL]-[-F-LL]"},
         };
 
         StartCoroutine(GenerateTree());
@@ -75,7 +79,7 @@ public class LSystemScript : MonoBehaviour
                         Instantiate(Leaf, finalPosition, transform.rotation);
                         break;
                     case 'L':
-                        Vector3 currentLeafPosition = transform.position + leafFactorY * Vector3.up + -5 * Vector3.right + -5 * transform.forward;
+                        Vector3 currentLeafPosition = transform.position + leafFactorY * Vector3.up + -1 * Vector3.right + -5 * transform.forward;
                         Instantiate(Leaf, transform.position, transform.rotation);
                         break;
                     case 'X':

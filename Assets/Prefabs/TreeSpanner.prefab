@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6d98609e1f8f35b9b9d49e21d707ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 10
+  iterations: 5
   Branch: {fileID: 4118336353460621757, guid: 80a6326437f50eea4958e8cef0797f83, type: 3}
   Leaf: {fileID: 3861432531434311442, guid: b6cc71bc73c1b9deb99b21bb8dcdc051, type: 3}
+  Pot: {fileID: 100000, guid: 2f66e97a51d037549a47f250801979de, type: 3}
   length: 0.02
   angle: 20
-  leafFactorY: -5
-  leafFactorX: 0

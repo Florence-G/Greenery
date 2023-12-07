@@ -8,7 +8,7 @@ public class CircleOnARPlane : MonoBehaviour
     private void Start()
     {
         ARPlaneManager arPlaneManager = FindObjectOfType<ARPlaneManager>();
-        arPlaneManager.planesChanged += OnPlanesChanged;
+        // arPlaneManager.planesChanged += OnPlanesChanged;
     }
 
     private void OnPlanesChanged(ARPlanesChangedEventArgs args)

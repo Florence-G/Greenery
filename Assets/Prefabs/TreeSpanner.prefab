@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8712513505159043986}
   m_Layer: 0
   m_Name: TreeSpanner
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,6 @@ MonoBehaviour:
   iterations: 5
   Branch: {fileID: 4118336353460621757, guid: 80a6326437f50eea4958e8cef0797f83, type: 3}
   Leaf: {fileID: 3861432531434311442, guid: b6cc71bc73c1b9deb99b21bb8dcdc051, type: 3}
-  Pot: {fileID: 100000, guid: 2f66e97a51d037549a47f250801979de, type: 3}
+  Pot: {fileID: 46055354611420596, guid: 0c275e053279d4994be869201fa59c27, type: 3}
   length: 0.02
   angle: 20

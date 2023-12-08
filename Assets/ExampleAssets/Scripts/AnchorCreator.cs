@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 //
 // This script allows us to create anchors with
@@ -12,11 +13,15 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARAnchorManager))]
 [RequireComponent(typeof(ARRaycastManager))]
 [RequireComponent(typeof(ARPlaneManager))]
+
 public class AnchorCreator : MonoBehaviour
 {
     // This is the prefab that will appear every time an anchor is created.
+    [SerializeField] public Button clearPlantButton;
+    [SerializeField] public Button plantAnotherPlantButton;
     [SerializeField]
     GameObject m_AnchorPrefab;
+    public bool canPlant = true;
 
     public GameObject AnchorPrefab
     {
@@ -32,6 +37,7 @@ public class AnchorCreator : MonoBehaviour
             Destroy(anchor);
         }
         m_AnchorPoints.Clear();
+        Destroy(m_AnchorPrefab);
     }
 
     // On Awake(), we obtains a reference to all the required components.
@@ -44,6 +50,35 @@ public class AnchorCreator : MonoBehaviour
         m_AnchorManager = GetComponent<ARAnchorManager>();
         m_PlaneManager = GetComponent<ARPlaneManager>();
         m_AnchorPoints = new List<ARAnchor>();
+        clearPlantButton.onClick.AddListener(clearPlants);
+        plantAnotherPlantButton.onClick.AddListener(enablePlantcreation);
+    }
+
+    void clearPlanes()
+    {
+        m_PlaneManager.detectionMode = PlaneDetectionMode.None;
+        foreach (ARPlane plane in m_PlaneManager.trackables){
+            plane.gameObject.SetActive(false);
+        }
+    }
+
+    void clearPlants()
+    {
+        GameObject[] plants = GameObject.FindGameObjectsWithTag("Plant");
+        foreach (GameObject plant in plants)
+        {
+            Destroy(plant);
+        }
+        enablePlantcreation();
+    }
+
+    void enablePlantcreation()
+    {   
+        canPlant = true;
+        m_PlaneManager.detectionMode = PlaneDetectionMode.Horizontal;
+         foreach (ARPlane plane in m_PlaneManager.trackables){
+            plane.gameObject.SetActive(true);
+       }
     }
 
     void Update()
@@ -58,12 +93,16 @@ public class AnchorCreator : MonoBehaviour
 
         if (m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
         {
+            if(!canPlant){
+                return;
+            }
+            canPlant = false;
             // Raycast hits are sorted by distance, so the first one
             // will be the closest hit.
+            clearPlanes();
             var hitPose = s_Hits[0].pose;
             var hitTrackableId = s_Hits[0].trackableId;
             var hitPlane = m_PlaneManager.GetPlane(hitTrackableId);
-
             // This attaches an anchor to the area on the plane corresponding to the raycast hit,
             // and afterwards instantiates an instance of your chosen prefab at that point.
             // This prefab instance is parented to the anchor to make sure the position of the prefab is consistent

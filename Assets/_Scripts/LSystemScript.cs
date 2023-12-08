@@ -9,8 +9,6 @@ public class TransformInfo
     public Quaternion rotation;
 }
 
-
-
 public class LSystemScript : MonoBehaviour
 {
     [SerializeField] private int iterations = 3;
@@ -39,7 +37,7 @@ public class LSystemScript : MonoBehaviour
 
     void Start()
     {
-        Instantiate(Pot, transform.position, transform.rotation);
+        Instantiate(Pot, transform.position + transform.up * -0.1f, transform.rotation);
         transformStack = new Stack<TransformInfo>();
         rules = new Dictionary<char, string> {
             {'X', "F+[[$X]-X]-F&[-F$X]+X&"},
@@ -74,7 +72,6 @@ public class LSystemScript : MonoBehaviour
             currentString = sb.ToString();
             sb = new StringBuilder();
 
-            yield return new WaitForSeconds(2.5f);
 
             transform.rotation = initialRotation;
             transform.position = initPosition;
@@ -84,6 +81,7 @@ public class LSystemScript : MonoBehaviour
                 switch (c)
                 {
                     case 'F':
+                        yield return new WaitForSeconds(0.0001f);
                         Vector3 initialPosition = transform.position;
                         transform.Translate(transform.up * length);
 
